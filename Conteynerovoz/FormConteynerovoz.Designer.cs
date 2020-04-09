@@ -35,6 +35,7 @@
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
+            this.buttonCreateConteynerovoz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,9 +55,9 @@
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(97, 33);
             this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "создать";
+            this.buttonCreate.Text = "создать судно";
             this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreate.Click += new System.EventHandler(this.buttonCreateBoat_Click);
             // 
             // buttonLeft
             // 
@@ -105,11 +106,22 @@
             this.buttonDown.UseVisualStyleBackColor = true;
             this.buttonDown.Click += new System.EventHandler(this.buttonMove_Click);
             // 
+            // buttonCreateConteynerovoz
+            // 
+            this.buttonCreateConteynerovoz.Location = new System.Drawing.Point(136, 8);
+            this.buttonCreateConteynerovoz.Name = "buttonCreateConteynerovoz";
+            this.buttonCreateConteynerovoz.Size = new System.Drawing.Size(152, 32);
+            this.buttonCreateConteynerovoz.TabIndex = 6;
+            this.buttonCreateConteynerovoz.Text = "создать контейнеровоз";
+            this.buttonCreateConteynerovoz.UseVisualStyleBackColor = true;
+            this.buttonCreateConteynerovoz.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormConteynerovoz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.buttonCreateConteynerovoz);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonRight);
@@ -132,6 +144,7 @@
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonUp;
         private System.Windows.Forms.Button buttonDown;
+        private System.Windows.Forms.Button buttonCreateConteynerovoz;
     }
 }
 
