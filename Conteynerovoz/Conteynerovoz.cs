@@ -10,19 +10,16 @@ namespace WindowsFormCars
     public class Conteynerovoz : Boat
     {
         public Color DopColor { private set; get; }
-
         public bool Cran { private set; get; }
-
         public bool Anchor { private set; get; }
-
+        public bool Conteyner { private set; get; }
         public bool Flag { private set; get; }
-
         private int _countLines;
 
         public int CountLines { set { if (value > 0 && value < 4) _countLines = value; } get { return _countLines; } }
 
 
-        public Conteynerovoz(int maxSpeed, float weight, Color mainColor, Color dopColor, bool cran, bool anchor, bool flag) :
+        public Conteynerovoz(int maxSpeed, float weight, Color mainColor, Color dopColor, bool cran, bool anchor, bool flag, bool conteyner) :
             base(maxSpeed, weight, mainColor)
         {
 
@@ -30,6 +27,7 @@ namespace WindowsFormCars
             Cran = cran;
             Anchor = anchor;
             Flag = flag;
+            Conteyner = conteyner;
             Random rnd = new Random();
             CountLines = rnd.Next(1, 4);
         }
@@ -63,6 +61,18 @@ namespace WindowsFormCars
                 {
                     g.DrawLine(pen, _startPosX + 210, _startPosY + 25, _startPosX + 220, m);
                 }
+            }
+            if (Conteyner)
+            {
+                Brush brRed = new SolidBrush(Color.Red);
+                g.FillRectangle(brRed, _startPosX + 130, _startPosY + 50, 20, 20);
+                g.FillRectangle(brRed, _startPosX + 90, _startPosY + 50, 20, 20);
+                g.FillRectangle(brRed, _startPosX + 110, _startPosY + 30, 20, 20);
+
+                Brush brGr = new SolidBrush(Color.Green);
+                g.FillRectangle(brGr, _startPosX + 90, _startPosY + 30, 20, 20);
+                g.FillRectangle(brGr, _startPosX + 110, _startPosY + 50, 20, 20);
+
             }
         }
     }

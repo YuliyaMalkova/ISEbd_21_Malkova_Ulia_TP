@@ -63,13 +63,6 @@ namespace WindowsFormCars
             {
                 g.DrawLine(pen, m, _startPosY + 70, _startPosX, _startPosY + 100);
             }
-            Brush brRed = new SolidBrush(Color.Red);
-            g.FillRectangle(brRed, _startPosX + 130, _startPosY + 50, 20, 20);
-            g.FillRectangle(brRed, _startPosX + 90, _startPosY + 50, 20, 20);
-            g.FillRectangle(brRed, _startPosX + 110, _startPosY + 30, 20, 20);
-            Brush brGr = new SolidBrush(Color.Green);
-            g.FillRectangle(brGr, _startPosX + 90, _startPosY + 30, 20, 20);
-            g.FillRectangle(brGr, _startPosX + 110, _startPosY + 50, 20, 20);
             Brush brWh = new SolidBrush(Color.White);
             g.FillRectangle(brWh, _startPosX, _startPosY + 10, 50, 60);
             g.FillRectangle(br, _startPosX, _startPosY, 70, 10);
