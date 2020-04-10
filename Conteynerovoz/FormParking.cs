@@ -26,7 +26,7 @@ namespace WindowsFormCars
             parking.Draw(gr);
             pictureBoxParking.Image = bmp;
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonSetBoat_Click(object sender, EventArgs e)
         {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -36,7 +36,7 @@ namespace WindowsFormCars
                 Draw();
             }
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonSetConteynerovoz_Click(object sender, EventArgs e)
         {
             ColorDialog dialog = new ColorDialog();
             if (dialog.ShowDialog() == DialogResult.OK)
@@ -50,7 +50,7 @@ namespace WindowsFormCars
                 }
             }
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonTakeBoat_Click(object sender, EventArgs e)
         {
             if (maskedTextBox1.Text != "")
             {

@@ -49,7 +49,7 @@
             this.buttonSetBoat.TabIndex = 0;
             this.buttonSetBoat.Text = "припарковать корабль";
             this.buttonSetBoat.UseVisualStyleBackColor = true;
-            this.buttonSetBoat.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSetBoat.Click += new System.EventHandler(this.buttonSetBoat_Click);
             // 
             // pictureBoxParking
             // 
@@ -68,7 +68,7 @@
             this.buttonSetConteynerovoz.TabIndex = 2;
             this.buttonSetConteynerovoz.Text = "припарковать контейнеровоз";
             this.buttonSetConteynerovoz.UseVisualStyleBackColor = true;
-            this.buttonSetConteynerovoz.Click += new System.EventHandler(this.button2_Click);
+            this.buttonSetConteynerovoz.Click += new System.EventHandler(this.buttonSetConteynerovoz_Click);
             // 
             // groupBox1
             // 
@@ -90,7 +90,6 @@
             this.pictureBoxtakeboat.Size = new System.Drawing.Size(309, 214);
             this.pictureBoxtakeboat.TabIndex = 3;
             this.pictureBoxtakeboat.TabStop = false;
-            this.pictureBoxtakeboat.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // label1
             // 
@@ -109,7 +108,7 @@
             this.buttonTakeBoat.TabIndex = 1;
             this.buttonTakeBoat.Text = "забрать";
             this.buttonTakeBoat.UseVisualStyleBackColor = true;
-            this.buttonTakeBoat.Click += new System.EventHandler(this.button3_Click);
+            this.buttonTakeBoat.Click += new System.EventHandler(this.buttonTakeBoat_Click);
             // 
             // maskedTextBox1
             // 
