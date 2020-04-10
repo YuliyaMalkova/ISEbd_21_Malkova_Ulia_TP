@@ -31,13 +31,13 @@
             this.buttonSetBoat = new System.Windows.Forms.Button();
             this.pictureBoxParking = new System.Windows.Forms.PictureBox();
             this.buttonSetConteynerovoz = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxTakeBoat = new System.Windows.Forms.GroupBox();
             this.pictureBoxtakeboat = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelConteynerovoz = new System.Windows.Forms.Label();
             this.buttonTakeBoat = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxMesto = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.groupBoxTakeBoat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxtakeboat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,18 +70,18 @@
             this.buttonSetConteynerovoz.UseVisualStyleBackColor = true;
             this.buttonSetConteynerovoz.Click += new System.EventHandler(this.buttonSetConteynerovoz_Click);
             // 
-            // groupBox1
+            // groupBoxTakeBoat
             // 
-            this.groupBox1.Controls.Add(this.pictureBoxtakeboat);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.buttonTakeBoat);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
-            this.groupBox1.Location = new System.Drawing.Point(890, 274);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(315, 344);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "забрать судно";
+            this.groupBoxTakeBoat.Controls.Add(this.pictureBoxtakeboat);
+            this.groupBoxTakeBoat.Controls.Add(this.labelConteynerovoz);
+            this.groupBoxTakeBoat.Controls.Add(this.buttonTakeBoat);
+            this.groupBoxTakeBoat.Controls.Add(this.maskedTextBoxMesto);
+            this.groupBoxTakeBoat.Location = new System.Drawing.Point(890, 274);
+            this.groupBoxTakeBoat.Name = "groupBoxTakeBoat";
+            this.groupBoxTakeBoat.Size = new System.Drawing.Size(315, 344);
+            this.groupBoxTakeBoat.TabIndex = 3;
+            this.groupBoxTakeBoat.TabStop = false;
+            this.groupBoxTakeBoat.Text = "забрать судно";
             // 
             // pictureBoxtakeboat
             // 
@@ -91,14 +91,14 @@
             this.pictureBoxtakeboat.TabIndex = 3;
             this.pictureBoxtakeboat.TabStop = false;
             // 
-            // label1
+            // labelConteynerovoz
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(100, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "место:";
+            this.labelConteynerovoz.AutoSize = true;
+            this.labelConteynerovoz.Location = new System.Drawing.Point(100, 16);
+            this.labelConteynerovoz.Name = "labelConteynerovoz";
+            this.labelConteynerovoz.Size = new System.Drawing.Size(41, 13);
+            this.labelConteynerovoz.TabIndex = 2;
+            this.labelConteynerovoz.Text = "место:";
             // 
             // buttonTakeBoat
             // 
@@ -110,27 +110,27 @@
             this.buttonTakeBoat.UseVisualStyleBackColor = true;
             this.buttonTakeBoat.Click += new System.EventHandler(this.buttonTakeBoat_Click);
             // 
-            // maskedTextBox1
+            // maskedTextBoxMesto
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(147, 16);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(38, 20);
-            this.maskedTextBox1.TabIndex = 0;
+            this.maskedTextBoxMesto.Location = new System.Drawing.Point(147, 16);
+            this.maskedTextBoxMesto.Name = "maskedTextBoxMesto";
+            this.maskedTextBoxMesto.Size = new System.Drawing.Size(38, 20);
+            this.maskedTextBoxMesto.TabIndex = 0;
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 618);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBoxTakeBoat);
             this.Controls.Add(this.buttonSetConteynerovoz);
             this.Controls.Add(this.pictureBoxParking);
             this.Controls.Add(this.buttonSetBoat);
             this.Name = "FormParking";
             this.Text = "Парковка";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupBoxTakeBoat.ResumeLayout(false);
+            this.groupBoxTakeBoat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxtakeboat)).EndInit();
             this.ResumeLayout(false);
 
@@ -141,10 +141,10 @@
         private System.Windows.Forms.Button buttonSetBoat;
         private System.Windows.Forms.PictureBox pictureBoxParking;
         private System.Windows.Forms.Button buttonSetConteynerovoz;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBoxTakeBoat;
+        private System.Windows.Forms.Label labelConteynerovoz;
         private System.Windows.Forms.Button buttonTakeBoat;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxMesto;
         private System.Windows.Forms.PictureBox pictureBoxtakeboat;
     }
 }

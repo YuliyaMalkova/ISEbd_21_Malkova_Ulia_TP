@@ -52,9 +52,9 @@ namespace WindowsFormCars
         }
         private void buttonTakeBoat_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
+            if (maskedTextBoxMesto.Text != "")
             {
-                var car = parking - Convert.ToInt32(maskedTextBox1.Text);
+                var car = parking - Convert.ToInt32(maskedTextBoxMesto.Text);
                 if (car != null)
                 {
                     Bitmap bmp = new Bitmap(pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
