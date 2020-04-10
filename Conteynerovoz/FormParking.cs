@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace WindowsFormCars
 {
-  
     public partial class FormParking : Form
     { 
         Parking<IConteynerovoz> parking;
@@ -27,7 +26,6 @@ namespace WindowsFormCars
             parking.Draw(gr);
             pictureBoxParking.Image = bmp;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             ColorDialog dialog = new ColorDialog();
@@ -38,7 +36,6 @@ namespace WindowsFormCars
                 Draw();
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             ColorDialog dialog = new ColorDialog();
@@ -53,7 +50,6 @@ namespace WindowsFormCars
                 }
             }
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             if (maskedTextBox1.Text != "")
@@ -74,11 +70,6 @@ namespace WindowsFormCars
                 }
                 Draw();
             }
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }
