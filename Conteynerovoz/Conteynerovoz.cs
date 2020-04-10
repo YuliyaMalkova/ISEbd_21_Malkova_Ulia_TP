@@ -70,7 +70,6 @@ namespace WindowsFormCars
                 Brush brGr = new SolidBrush(Color.Green);
                 g.FillRectangle(brGr, _startPosX + 90, _startPosY + 30, 20, 20);
                 g.FillRectangle(brGr, _startPosX + 110, _startPosY + 50, 20, 20);
-
             }
         }
     }
