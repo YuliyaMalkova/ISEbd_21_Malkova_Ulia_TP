@@ -37,6 +37,7 @@
             this.buttonTakeBoat = new System.Windows.Forms.Button();
             this.maskedTextBoxMesto = new System.Windows.Forms.MaskedTextBox();
             this.listBoxLevels = new System.Windows.Forms.ListBox();
+
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxTakeBoat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxtakeboat)).BeginInit();
@@ -117,6 +118,7 @@
             this.maskedTextBoxMesto.Name = "maskedTextBoxMesto";
             this.maskedTextBoxMesto.Size = new System.Drawing.Size(38, 20);
             this.maskedTextBoxMesto.TabIndex = 0;
+
             // 
             // listBoxLevels
             // 
@@ -125,13 +127,16 @@
             this.listBoxLevels.Name = "listBoxLevels";
             this.listBoxLevels.Size = new System.Drawing.Size(109, 147);
             this.listBoxLevels.TabIndex = 4;
+
             // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 618);
+
             this.Controls.Add(this.listBoxLevels);
+
             this.Controls.Add(this.groupBoxTakeBoat);
             this.Controls.Add(this.buttonSetConteynerovoz);
             this.Controls.Add(this.pictureBoxParking);

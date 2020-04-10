@@ -77,6 +77,7 @@ namespace WindowsFormCars
             if (listBoxLevels.SelectedIndex > -1)
             {
                 if (maskedTextBoxMesto.Text != "")
+
                 {
                     var boat = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBoxMesto.Text);
                     if (boat != null)
