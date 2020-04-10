@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormCars
 {
-    interface IConteynerovoz
+   public interface IConteynerovoz
     {
         void SetPosition(int x, int y, int width, int height);
         void MoveTransport(Direction direction);
