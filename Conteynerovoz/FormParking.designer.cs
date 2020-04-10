@@ -37,7 +37,7 @@
             this.listBoxLevels = new System.Windows.Forms.ListBox();
             this.buttonSetBoat = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.фыйлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -126,21 +126,21 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.фыйлToolStripMenuItem});
+            this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1203, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // фыйлToolStripMenuItem
+            // файлToolStripMenuItem
             // 
-            this.фыйлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сохранитьToolStripMenuItem,
             this.загрузитьToolStripMenuItem});
-            this.фыйлToolStripMenuItem.Name = "фыйлToolStripMenuItem";
-            this.фыйлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.фыйлToolStripMenuItem.Text = "Файл";
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
             // 
             // сохранитьToolStripMenuItem
             // 
@@ -199,7 +199,7 @@
         private System.Windows.Forms.ListBox listBoxLevels;
         private System.Windows.Forms.Button buttonSetBoat;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem фыйлToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;

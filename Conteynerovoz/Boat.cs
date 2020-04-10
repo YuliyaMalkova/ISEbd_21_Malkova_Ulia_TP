@@ -61,7 +61,7 @@ namespace WindowsFormCars
         }
         public override void DrawCar(Graphics g)
         {
-            Pen pen = new Pen(MainColor);
+            Pen pen = new Pen(MainColor);      
             Brush br = new SolidBrush(MainColor);
             g.FillRectangle(br, _startPosX, _startPosY + 70, 150, 30);
             g.FillRectangle(br, _startPosX + 150, _startPosY + 50, 70, 50);

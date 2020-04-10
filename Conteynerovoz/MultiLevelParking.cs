@@ -51,15 +51,22 @@ namespace WindowsFormCars
                         var boat = level[i];
                         if (boat != null)
                         {
-                            if (boat.GetType().Name == "Boat")
+                            try
                             {
                                 sw.Write(i + ":Boat:");
+                                if (boat.GetType().Name == "Boat")
+                                {
+                                    sw.Write(i + ":Boat:");
+                                }
+                                if (boat.GetType().Name == "Conteynerovoz")
+                                {
+                                    sw.Write(i + ":Conteynerovoz:");
+                                }
+                                sw.WriteLine(boat);
                             }
-                            if (boat.GetType().Name == "Conteynerovoz")
-                            {
-                                sw.Write(i + ":Conteynerovoz:");
-                            }
-                            sw.WriteLine(boat);
+
+                            finally { }
+
                         }
                     }
                 }
@@ -91,7 +98,7 @@ namespace WindowsFormCars
                 }
                 else
                 {
-                    return false;
+                    throw new Exception("Неверный формат файла");
                 }
                 int counter = -1;
                 IConteynerovoz boat = null;

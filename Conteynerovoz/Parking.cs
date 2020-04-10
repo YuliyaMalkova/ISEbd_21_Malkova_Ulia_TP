@@ -17,22 +17,22 @@ namespace WindowsFormCars
         private const int _placeSizeHeight = 150;
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
-            _maxCount = sizes;
+            _maxCount = 9;
             _places = new Dictionary<int, T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
         }
-        public static int operator +(Parking<T> p, T car)
+        public static int operator +(Parking<T> p, T boat)
         {
             if (p._places.Count == p._maxCount)
             {
-                return -1;
+                throw new ParkingOverflowException();
             }
             for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
-                    p._places.Add(i, car);
+                    p._places.Add(i, boat);
                     p._places[i].SetPosition(35 + i / 3 * _placeSizeWidth + 5,
                     i % 3 * _placeSizeHeight + 35, p.PictureWidth, p.PictureHeight);
                     return i;
@@ -48,7 +48,7 @@ namespace WindowsFormCars
                 p._places.Remove(index);
                 return car;
             }
-            return null;
+            throw new ParkingNotFoundException(index);
         }
         private bool CheckFreePlace(int index)
         {
@@ -92,7 +92,7 @@ namespace WindowsFormCars
                 if (CheckFreePlace(ind))
                 {
                     _places.Add(ind, value);
-                    _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 20, ind % 5 * _placeSizeHeight + 29, PictureWidth, PictureHeight);
+                    _places[ind].SetPosition(5 + ind / 3 * _placeSizeWidth + 20, ind % 3 * _placeSizeHeight + 29, PictureWidth, PictureHeight);
                 }
             }
         }

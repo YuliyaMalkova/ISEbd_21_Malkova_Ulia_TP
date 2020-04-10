@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.labelSportCar = new System.Windows.Forms.Label();
-            this.labelCar = new System.Windows.Forms.Label();
-            this.pictureBoxCar = new System.Windows.Forms.PictureBox();
-            this.panelCar = new System.Windows.Forms.Panel();
+            this.groupBoxKindOfBoat = new System.Windows.Forms.GroupBox();
+            this.labelConteynerovoz = new System.Windows.Forms.Label();
+            this.labelBoat = new System.Windows.Forms.Label();
+            this.pictureBoxBoat = new System.Windows.Forms.PictureBox();
+            this.panelBoat = new System.Windows.Forms.Panel();
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
             this.panelRed = new System.Windows.Forms.Panel();
@@ -43,69 +43,69 @@
             this.panelBlue = new System.Windows.Forms.Panel();
             this.panelAqua = new System.Windows.Forms.Panel();
             this.panelBlack = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.panelColor = new System.Windows.Forms.Panel();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
-            this.panelCar.SuspendLayout();
+            this.groupBoxKindOfBoat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).BeginInit();
+            this.panelBoat.SuspendLayout();
             this.panelColor.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupBoxKindOfBoat
             // 
-            this.groupBox1.Controls.Add(this.labelSportCar);
-            this.groupBox1.Controls.Add(this.labelCar);
-            this.groupBox1.Location = new System.Drawing.Point(38, 31);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(203, 199);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "тип кузова";
+            this.groupBoxKindOfBoat.Controls.Add(this.labelConteynerovoz);
+            this.groupBoxKindOfBoat.Controls.Add(this.labelBoat);
+            this.groupBoxKindOfBoat.Location = new System.Drawing.Point(38, 31);
+            this.groupBoxKindOfBoat.Name = "groupBoxKindOfBoat";
+            this.groupBoxKindOfBoat.Size = new System.Drawing.Size(203, 199);
+            this.groupBoxKindOfBoat.TabIndex = 0;
+            this.groupBoxKindOfBoat.TabStop = false;
+            this.groupBoxKindOfBoat.Text = "тип кузова";
             // 
-            // labelSportCar
+            // labelConteynerovoz
             // 
-            this.labelSportCar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSportCar.Location = new System.Drawing.Point(20, 106);
-            this.labelSportCar.Name = "labelSportCar";
-            this.labelSportCar.Size = new System.Drawing.Size(144, 54);
-            this.labelSportCar.TabIndex = 1;
-            this.labelSportCar.Text = "контейнеровоз";
-            this.labelSportCar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelSportCar_MouseDown);
+            this.labelConteynerovoz.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelConteynerovoz.Location = new System.Drawing.Point(20, 106);
+            this.labelConteynerovoz.Name = "labelConteynerovoz";
+            this.labelConteynerovoz.Size = new System.Drawing.Size(144, 54);
+            this.labelConteynerovoz.TabIndex = 1;
+            this.labelConteynerovoz.Text = "контейнеровоз";
+            this.labelConteynerovoz.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelSportCar_MouseDown);
             // 
-            // labelCar
+            // labelBoat
             // 
-            this.labelCar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCar.Location = new System.Drawing.Point(20, 25);
-            this.labelCar.Name = "labelCar";
-            this.labelCar.Size = new System.Drawing.Size(144, 57);
-            this.labelCar.TabIndex = 0;
-            this.labelCar.Text = "судно";
-            this.labelCar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelCar_MouseDown);
+            this.labelBoat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelBoat.Location = new System.Drawing.Point(20, 25);
+            this.labelBoat.Name = "labelBoat";
+            this.labelBoat.Size = new System.Drawing.Size(144, 57);
+            this.labelBoat.TabIndex = 0;
+            this.labelBoat.Text = "судно";
+            this.labelBoat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelCar_MouseDown);
             // 
-            // pictureBoxCar
+            // pictureBoxBoat
             // 
-            this.pictureBoxCar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxCar.Location = new System.Drawing.Point(23, 21);
-            this.pictureBoxCar.Name = "pictureBoxCar";
-            this.pictureBoxCar.Size = new System.Drawing.Size(279, 196);
-            this.pictureBoxCar.TabIndex = 1;
-            this.pictureBoxCar.TabStop = false;
-            this.pictureBoxCar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelCar_MouseDown);
+            this.pictureBoxBoat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBoxBoat.Location = new System.Drawing.Point(23, 21);
+            this.pictureBoxBoat.Name = "pictureBoxBoat";
+            this.pictureBoxBoat.Size = new System.Drawing.Size(279, 196);
+            this.pictureBoxBoat.TabIndex = 1;
+            this.pictureBoxBoat.TabStop = false;
+            this.pictureBoxBoat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelCar_MouseDown);
             // 
-            // panelCar
+            // panelBoat
             // 
-            this.panelCar.AllowDrop = true;
-            this.panelCar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCar.Controls.Add(this.labelDopColor);
-            this.panelCar.Controls.Add(this.labelBaseColor);
-            this.panelCar.Controls.Add(this.pictureBoxCar);
-            this.panelCar.Location = new System.Drawing.Point(257, 13);
-            this.panelCar.Name = "panelCar";
-            this.panelCar.Size = new System.Drawing.Size(323, 357);
-            this.panelCar.TabIndex = 2;
-            this.panelCar.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelCar_DragDrop);
-            this.panelCar.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelCar_DragEnter);
+            this.panelBoat.AllowDrop = true;
+            this.panelBoat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBoat.Controls.Add(this.labelDopColor);
+            this.panelBoat.Controls.Add(this.labelBaseColor);
+            this.panelBoat.Controls.Add(this.pictureBoxBoat);
+            this.panelBoat.Location = new System.Drawing.Point(257, 13);
+            this.panelBoat.Name = "panelBoat";
+            this.panelBoat.Size = new System.Drawing.Size(323, 357);
+            this.panelBoat.TabIndex = 2;
+            this.panelBoat.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelCar_DragDrop);
+            this.panelBoat.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelCar_DragEnter);
             // 
             // labelDopColor
             // 
@@ -205,15 +205,15 @@
             this.panelBlack.TabIndex = 10;
             this.panelBlack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelColor_MouseDown);
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.Location = new System.Drawing.Point(86, 252);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 31);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAdd.Location = new System.Drawing.Point(86, 252);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(103, 31);
+            this.buttonAdd.TabIndex = 11;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonCancel
             // 
@@ -246,14 +246,14 @@
             this.ClientSize = new System.Drawing.Size(785, 392);
             this.Controls.Add(this.panelColor);
             this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panelCar);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.panelBoat);
+            this.Controls.Add(this.groupBoxKindOfBoat);
             this.Name = "FormCarConfig";
             this.Text = "FormCarConfig";
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
-            this.panelCar.ResumeLayout(false);
+            this.groupBoxKindOfBoat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBoat)).EndInit();
+            this.panelBoat.ResumeLayout(false);
             this.panelColor.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -261,11 +261,11 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelCar;
-        private System.Windows.Forms.Label labelSportCar;
-        private System.Windows.Forms.PictureBox pictureBoxCar;
-        private System.Windows.Forms.Panel panelCar;
+        private System.Windows.Forms.GroupBox groupBoxKindOfBoat;
+        private System.Windows.Forms.Label labelBoat;
+        private System.Windows.Forms.Label labelConteynerovoz;
+        private System.Windows.Forms.PictureBox pictureBoxBoat;
+        private System.Windows.Forms.Panel panelBoat;
         private System.Windows.Forms.Label labelDopColor;
         private System.Windows.Forms.Label labelBaseColor;
         private System.Windows.Forms.Panel panelRed;
@@ -276,7 +276,7 @@
         private System.Windows.Forms.Panel panelBlue;
         private System.Windows.Forms.Panel panelAqua;
         private System.Windows.Forms.Panel panelBlack;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Panel panelColor;
     }

@@ -27,15 +27,16 @@ namespace WindowsFormCars
             panelBlue.MouseDown += panelColor_MouseDown;
             buttonCancel.Click += (object sender, EventArgs e) => { Close(); };
         }
+
         private void DrawCar()
         {
             if (car != null)
             {
-                Bitmap bmp = new Bitmap(pictureBoxCar.Width, pictureBoxCar.Height);
+                Bitmap bmp = new Bitmap(pictureBoxBoat.Width, pictureBoxBoat.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                car.SetPosition(30, 35, pictureBoxCar.Width, pictureBoxCar.Height);
+                car.SetPosition(30, 35, pictureBoxBoat.Width, pictureBoxBoat.Height);
                 car.DrawCar(gr);
-                pictureBoxCar.Image = bmp;
+                pictureBoxBoat.Image = bmp;
             }
         }
         public void AddEvent(carDelegate ev)
@@ -54,10 +55,12 @@ namespace WindowsFormCars
             (sender as Control).DoDragDrop((sender as Control).BackColor,
                 DragDropEffects.Move | DragDropEffects.Copy);
         }
+
         private void labelCar_MouseDown(object sender, MouseEventArgs e)
         {
-            labelCar.DoDragDrop(labelCar.Text, DragDropEffects.Move | DragDropEffects.Copy);
+            labelBoat.DoDragDrop(labelBoat.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
+
         private void panelCar_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -67,6 +70,7 @@ namespace WindowsFormCars
                 e.Effect = DragDropEffects.None;
             }
         }
+
         private void panelCar_DragDrop(object sender, DragEventArgs e)
         {
             switch (e.Data.GetData(DataFormats.Text).ToString())
@@ -80,10 +84,12 @@ namespace WindowsFormCars
             }
             DrawCar();
         }
+
         private void labelSportCar_MouseDown(object sender, MouseEventArgs e)
         {
-            labelSportCar.DoDragDrop(labelSportCar.Text, DragDropEffects.Move | DragDropEffects.Copy);
+            labelConteynerovoz.DoDragDrop(labelConteynerovoz.Text, DragDropEffects.Move | DragDropEffects.Copy);
         }
+
         private void labelBaseColor_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(Color)))
@@ -95,6 +101,8 @@ namespace WindowsFormCars
                 e.Effect = DragDropEffects.None;
             }
         }
+
+
         private void labelBaseColor_DragDrop(object sender, DragEventArgs e)
         {
             if (car != null)
@@ -103,6 +111,7 @@ namespace WindowsFormCars
                 DrawCar();
             }
         }
+
         private void labelDopColor_DragDrop(object sender, DragEventArgs e)
         {
             if (car != null)
@@ -114,6 +123,7 @@ namespace WindowsFormCars
                 }
             }
         }
+
         private void buttonOk_Click(object sender, EventArgs e)
         {
             eventAddCar?.Invoke(car); Close();
@@ -123,5 +133,6 @@ namespace WindowsFormCars
         {
             eventAddCar?.Invoke(car); Close();
         }
+
     }
 }
