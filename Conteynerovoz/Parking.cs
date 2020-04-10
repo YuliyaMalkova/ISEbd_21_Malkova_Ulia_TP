@@ -9,29 +9,31 @@ namespace WindowsFormCars
 {
     public class Parking<T> where T : class, IConteynerovoz
     {
-        private T[] _places;
+        private Dictionary<int, T> _places;
+        private int _maxCount;
         private int PictureWidth { get; set; }
         private int PictureHeight { get; set; }
-private const int _placeSizeWidth = 310;
+        private const int _placeSizeWidth = 310;
         private const int _placeSizeHeight = 150;
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
-            _places = new T[sizes];
+            _maxCount = sizes;
+            _places = new Dictionary<int, T>();
             PictureWidth = pictureWidth;
             PictureHeight = pictureHeight;
-            for (int i = 0; i < _places.Length; i++)
-            {
-                _places[i] = null;
-            }
         }
         public static int operator +(Parking<T> p, T car)
         {
-            for (int i = 0; i < p._places.Length; i++)
+            if (p._places.Count == p._maxCount)
+            {
+                return -1;
+            }
+            for (int i = 0; i < p._maxCount; i++)
             {
                 if (p.CheckFreePlace(i))
                 {
-                    p._places[i] = car;
-                    p._places[i].SetPosition(20 + i / 3 * _placeSizeWidth + 3,
+                    p._places.Add(i, car);
+                    p._places[i].SetPosition(35 + i / 3 * _placeSizeWidth + 5,
                     i % 3 * _placeSizeHeight + 35, p.PictureWidth, p.PictureHeight);
                     return i;
                 }
@@ -40,39 +42,32 @@ private const int _placeSizeWidth = 310;
         }
         public static T operator -(Parking<T> p, int index)
         {
-            if (index < 0 || index > p._places.Length)
-            {
-                return null;
-            }
             if (!p.CheckFreePlace(index))
-                
-        {
+            {
                 T car = p._places[index];
-                p._places[index] = null;
+                p._places.Remove(index);
                 return car;
             }
             return null;
         }
         private bool CheckFreePlace(int index)
         {
-            return _places[index] == null;
+            return !_places.ContainsKey(index);
         }
         public void Draw(Graphics g)
         {
             DrawMarking(g);
-            for (int i = 0; i < _places.Length; i++)
+            var keys = _places.Keys.ToList();
+            for (int i = 0; i < keys.Count; i++)
             {
-                if (!CheckFreePlace(i))
-                {
-                    _places[i].DrawCar(g);
-                }
+                _places[keys[i]].DrawCar(g);
             }
         }
         private void DrawMarking(Graphics g)
         {
             Pen pen = new Pen(Color.Black, 3);
-            g.DrawRectangle(pen, 0, 0, (_places.Length / 3) * _placeSizeWidth, 480);
-            for (int i = 0; i < _places.Length / 3; i++)
+            g.DrawRectangle(pen, 0, 0, (_maxCount / 3) * _placeSizeWidth, 480);
+            for (int i = 0; i < _maxCount / 3; i++)
             {
                 for (int j = 0; j < 3; ++j)
                 {
@@ -82,5 +77,7 @@ private const int _placeSizeWidth = 310;
                 g.DrawLine(pen, i * _placeSizeWidth, 0, i * _placeSizeWidth, 400);
             }
         }
+        
     }
+
 }

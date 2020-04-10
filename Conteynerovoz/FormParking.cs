@@ -11,65 +11,94 @@ using System.Windows.Forms;
 namespace WindowsFormCars
 {
     public partial class FormParking : Form
-    { 
-        Parking<IConteynerovoz> parking;
+    {
+        MultiLevelParking parking;
+        private const int countLevel = 5;
         public FormParking()
         {
             InitializeComponent();
-            parking = new Parking<IConteynerovoz>(20, pictureBoxParking.Width, pictureBoxParking.Height);
-            Draw();
+            parking = new MultiLevelParking(countLevel, pictureBoxParking.Width, pictureBoxParking.Height); Draw();
+            for (int i = 0; i < countLevel; i++)
+            {
+                listBoxLevels.Items.Add("Уровень " + (i + 1));
+            }
+            listBoxLevels.SelectedIndex = 0;
         }
         private void Draw()
         {
-            Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
-            Graphics gr = Graphics.FromImage(bmp);
-            parking.Draw(gr);
-            pictureBoxParking.Image = bmp;
+            if (listBoxLevels.SelectedIndex > -1)
+            {
+                Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
+                Graphics gr = Graphics.FromImage(bmp);
+                parking[listBoxLevels.SelectedIndex].Draw(gr);
+                pictureBoxParking.Image = bmp;
+            }
         }
         private void buttonSetBoat_Click(object sender, EventArgs e)
         {
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (listBoxLevels.SelectedIndex > -1)
             {
-                var car = new Boat(100, 1000, dialog.Color);
-                int place = parking + car;
-                Draw();
+                ColorDialog dialog = new ColorDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    var car = new Boat(100, 1000, dialog.Color);
+                    int place = parking[listBoxLevels.SelectedIndex] + car;
+                    if (place == -1)
+                    {
+                        MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    Draw();
+                }
             }
         }
         private void buttonSetConteynerovoz_Click(object sender, EventArgs e)
         {
-            ColorDialog dialog = new ColorDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
+            if (listBoxLevels.SelectedIndex > -1)
             {
-                ColorDialog dialogDop = new ColorDialog();
-                if (dialogDop.ShowDialog() == DialogResult.OK)
+                ColorDialog dialog = new ColorDialog();
+                if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    var car = new Conteynerovoz(100, 1000, dialog.Color, dialogDop.Color, true, true, true,true);
-                    int place = parking + car;
-                    Draw();
+                    ColorDialog dialogDop = new ColorDialog();
+                    if (dialogDop.ShowDialog() == DialogResult.OK)
+                    {
+                        var car = new Conteynerovoz(100, 1000, dialog.Color, dialogDop.Color, true, true, true, true);
+                        int place = parking[listBoxLevels.SelectedIndex] + car;
+                        if (place == -1)
+                        {
+                            MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        Draw();
+                    }
                 }
             }
         }
         private void buttonTakeBoat_Click(object sender, EventArgs e)
         {
-            if (maskedTextBox1.Text != "")
+            if (listBoxLevels.SelectedIndex > -1)
             {
-                var car = parking - Convert.ToInt32(maskedTextBox1.Text);
-                if (car != null)
+                if (maskedTextBoxMesto.Text != "")
                 {
-                    Bitmap bmp = new Bitmap(pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
-                    Graphics gr = Graphics.FromImage(bmp);
-                    car.SetPosition(25, 35, pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
-                    car.DrawCar(gr);
-                    pictureBoxtakeboat.Image = bmp;
+                    var boat = parking[listBoxLevels.SelectedIndex] - Convert.ToInt32(maskedTextBoxMesto.Text);
+                    if (boat != null)
+                    {
+                        Bitmap bmp = new Bitmap(pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
+                        Graphics gr = Graphics.FromImage(bmp);
+                        boat.SetPosition(20, 5, pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
+                        boat.DrawCar(gr);
+                        pictureBoxtakeboat.Image = bmp;
+                    }
+                    else
+                    {
+                        Bitmap bmp = new Bitmap(pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
+                        pictureBoxtakeboat.Image = bmp;
+                    }
+                    Draw();
                 }
-                else
-                {
-                    Bitmap bmp = new Bitmap(pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
-                    pictureBoxtakeboat.Image = bmp;
-                }
-                Draw();
             }
+        }
+        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Draw();
         }
     }
 }
