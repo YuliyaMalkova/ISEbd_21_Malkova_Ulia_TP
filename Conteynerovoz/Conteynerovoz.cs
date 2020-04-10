@@ -17,8 +17,6 @@ namespace WindowsFormCars
         private int _countLines;
 
         public int CountLines { set { if (value > 0 && value < 4) _countLines = value; } get { return _countLines; } }
-
-
         public Conteynerovoz(int maxSpeed, float weight, Color mainColor, Color dopColor, bool cran, bool anchor, bool flag, bool conteyner) :
             base(maxSpeed, weight, mainColor)
         {
