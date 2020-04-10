@@ -25,25 +25,16 @@ namespace WindowsFormCars
             Random rnd = new Random();
             CountLines = rnd.Next(1, 4);
         }
-        public Conteynerovoz(string info) : base(info)
-        {
-            string[] strs = info.Split(';');
-            if (strs.Length == 7)
-            {
-                MaxSpeed = Convert.ToInt32(strs[0]);
-                Weight = Convert.ToInt32(strs[1]);
-                MainColor = Color.FromName(strs[2]);
-                DopColor = Color.FromName(strs[3]);
-                Cran = Convert.ToBoolean(strs[4]);
-                Flag = Convert.ToBoolean(strs[5]);
-                Anchor = Convert.ToBoolean(strs[6]);
-            }
-        }
         public override void DrawCar(Graphics g)
         {
             Pen pen = new Pen(MainColor);
+
+
             Brush br = new SolidBrush(MainColor);
+
+
             base.DrawCar(g);
+
             if (Cran)
             {
                 Brush spoiler = new SolidBrush(DopColor);
