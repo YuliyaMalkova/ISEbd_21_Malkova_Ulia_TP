@@ -54,13 +54,13 @@ namespace WindowsFormCars
         {
             if (maskedTextBoxMesto.Text != "")
             {
-                var car = parking - Convert.ToInt32(maskedTextBoxMesto.Text);
-                if (car != null)
+                var boat = parking - Convert.ToInt32(maskedTextBoxMesto.Text);
+                if (boat != null)
                 {
                     Bitmap bmp = new Bitmap(pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
                     Graphics gr = Graphics.FromImage(bmp);
-                    car.SetPosition(25, 35, pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
-                    car.DrawCar(gr);
+                    boat.SetPosition(25, 35, pictureBoxtakeboat.Width, pictureBoxtakeboat.Height);
+                    boat.DrawCar(gr);
                     pictureBoxtakeboat.Image = bmp;
                 }
                 else
