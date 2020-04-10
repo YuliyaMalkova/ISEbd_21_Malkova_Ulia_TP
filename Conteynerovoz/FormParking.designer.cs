@@ -69,7 +69,6 @@
             this.buttonSetConteynerovoz.TabIndex = 2;
             this.buttonSetConteynerovoz.Text = "припарковать контейнеровоз";
             this.buttonSetConteynerovoz.UseVisualStyleBackColor = true;
-            this.buttonSetConteynerovoz.Click += new System.EventHandler(this.buttonSetConteynerovoz_Click);
             // 
             // groupBoxTakeBoat
             // 

@@ -13,6 +13,7 @@ namespace WindowsFormCars
     public partial class FormParking : Form
     {
         MultiLevelParking parking;
+        FormCarConfig form;
         private const int countLevel = 5;
         public FormParking()
         {
@@ -34,44 +35,13 @@ namespace WindowsFormCars
                 pictureBoxParking.Image = bmp;
             }
         }
-        private void buttonSetBoat_Click(object sender, EventArgs e)
-        {
-            if (listBoxLevels.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var car = new Boat(100, 1000, dialog.Color);
-                    int place = parking[listBoxLevels.SelectedIndex] + car;
-                    if (place == -1)
-                    {
-                        MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    Draw();
-                }
-            }
-        }
-        private void buttonSetConteynerovoz_Click(object sender, EventArgs e)
-        {
-            if (listBoxLevels.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var car = new Conteynerovoz(100, 1000, dialog.Color, dialogDop.Color, true, true, true, true);
-                        int place = parking[listBoxLevels.SelectedIndex] + car;
-                        if (place == -1)
-                        {
-                            MessageBox.Show("Нет свободных мест", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        Draw();
-                    }
-                }
-            }
-        }
+           private void buttonSetBoat_Click(object sender, EventArgs e)      
+           {
+               form = new FormCarConfig();
+            form.AddEvent(AddCar);
+            form.Show();
+           }
+           
         private void buttonTakeBoat_Click(object sender, EventArgs e)
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -99,6 +69,21 @@ namespace WindowsFormCars
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
+        }
+
+        private void AddCar(IConteynerovoz car)
+        {
+            if (car != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + car; if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
         }
     }
 }
