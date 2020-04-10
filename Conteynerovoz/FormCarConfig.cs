@@ -50,6 +50,7 @@ namespace WindowsFormCars
                 eventAddCar += ev;
             }
         }
+
         private void panelColor_MouseDown(object sender, MouseEventArgs e)
         {
             (sender as Control).DoDragDrop((sender as Control).BackColor,
@@ -101,8 +102,6 @@ namespace WindowsFormCars
                 e.Effect = DragDropEffects.None;
             }
         }
-
-
         private void labelBaseColor_DragDrop(object sender, DragEventArgs e)
         {
             if (car != null)

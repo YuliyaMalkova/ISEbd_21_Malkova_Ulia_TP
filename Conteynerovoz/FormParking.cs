@@ -172,5 +172,20 @@ namespace WindowsFormCars
                 Draw();
             }
         }
+
+        private void AddCar(IConteynerovoz car)
+        {
+            if (car != null && listBoxLevels.SelectedIndex > -1)
+            {
+                int place = parking[listBoxLevels.SelectedIndex] + car; if (place > -1)
+                {
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
+                }
+            }
+        }
     }
 }
