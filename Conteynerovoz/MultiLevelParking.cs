@@ -46,28 +46,17 @@ namespace WindowsFormCars
                 foreach (var level in parkingStages)
                 {
                     sw.WriteLine("Level");
-                    for (int i = 0; i < countPlaces; i++)
+                    foreach (IConteynerovoz boat in level)
                     {
-                        var boat = level[i];
-                        if (boat != null)
+                        if (boat.GetType().Name == "Boat")
                         {
-                            try
-                            {
-                                sw.Write(i + ":Boat:");
-                                if (boat.GetType().Name == "Boat")
-                                {
-                                    sw.Write(i + ":Boat:");
-                                }
-                                if (boat.GetType().Name == "Conteynerovoz")
-                                {
-                                    sw.Write(i + ":Conteynerovoz:");
-                                }
-                                sw.WriteLine(boat);
-                            }
-
-                            finally { }
-
+                            sw.Write(level.GetKey + ":Boat:");
                         }
+                        if (boat.GetType().Name == "Conteynerovoz")
+                        {
+                            sw.Write(level.GetKey + ":Conteynerovoz:");
+                        }
+                        sw.WriteLine(boat);
                     }
                 }
             }
@@ -82,7 +71,7 @@ namespace WindowsFormCars
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             using (StreamReader sr = new StreamReader(filename))
             {
@@ -127,6 +116,10 @@ namespace WindowsFormCars
                 }
             }
             return true;
+        }
+        public void Sort()
+        {
+            parkingStages.Sort();
         }
     }
 }

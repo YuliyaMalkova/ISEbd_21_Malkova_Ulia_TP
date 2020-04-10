@@ -31,6 +31,7 @@ namespace WindowsFormCars
                 listBoxLevels.Items.Add("Уровень " + (i + 1));
             }
             listBoxLevels.SelectedIndex = 0;
+
         }
         private void Draw()
         {
@@ -41,6 +42,12 @@ namespace WindowsFormCars
                 parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
+        }
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
         }
         private void buttonTakeCar_Click(object sender, EventArgs e)
         {
@@ -78,7 +85,6 @@ namespace WindowsFormCars
         {
             Draw();
         }
-
         private void AddCar(IConteynerovoz boat)
         {
             if (boat != null && listBoxLevels.SelectedIndex > -1)
@@ -88,6 +94,11 @@ namespace WindowsFormCars
                     int place = parking[listBoxLevels.SelectedIndex] + boat;
                     logger.Info("Добавлен трактор " + boat.ToString() + " на место " + place);
                     Draw();
+                }
+                catch (ParkingAlreadyHaveException ex)
+                {
+                    exception.Debug(ex.Message);
+                    MessageBox.Show(ex.Message, "Дублирование", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (ParkingOverflowException ex)
                 {
@@ -120,7 +131,6 @@ namespace WindowsFormCars
                 exception.Debug(ex.Message);
                 MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
         private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -141,7 +151,6 @@ namespace WindowsFormCars
                 Draw();
             }
         }
-
 
         private void сохранитьToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
