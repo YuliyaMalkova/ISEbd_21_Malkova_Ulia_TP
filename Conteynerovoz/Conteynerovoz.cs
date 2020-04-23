@@ -66,6 +66,7 @@ namespace WindowsFormCars
         {
             DopColor = color;
         }
+
         public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Flag + ";" + Anchor + ";" + Cran;
