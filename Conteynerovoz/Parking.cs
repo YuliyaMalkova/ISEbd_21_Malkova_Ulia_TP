@@ -11,31 +11,11 @@ namespace WindowsFormCars
     public class Parking<T> : IEnumerator<T>, IEnumerable<T>, IComparable<Parking<T>>
          where T : class, IConteynerovoz
     {
-
-        /// <summary>
-        /// Массив объектов, которые храним
-        /// </summary>
         private Dictionary<int, T> _places;
-        /// <summary>
-        /// Максимальное количество мест на парковке
-        /// </summary>
         private int _maxCount;
-        /// <summary>
-        /// Ширина окна отрисовки
-        /// </summary>
         private int PictureWidth { get; set; }
-        /// <summary>
-        /// Высота окна отрисовки
-        /// </summary>
         private int PictureHeight { get; set; }
-        /// <summary>
-        /// Размер парковочного места (ширина)
-        /// </summary>
-
         private const int _placeSizeWidth = 310;
-        /// <summary>
-        /// Размер парковочного места (высота)
-        /// </summary>
         private const int _placeSizeHeight = 150;
         private int _currentIndex;
         public int GetKey
@@ -45,12 +25,6 @@ namespace WindowsFormCars
                 return _places.Keys.ToList()[_currentIndex];
             }
         }
-        /// <summary>
-        /// Конструктор
-        /// </summary>
-        /// <param name="sizes">Количество мест на парковке</param>
-        /// <param name="pictureWidth">Рамзер парковки - ширина</param>
-        /// <param name="pictureHeight">Рамзер парковки - высота</param>
         public Parking(int sizes, int pictureWidth, int pictureHeight)
         {
             _maxCount = 9;
@@ -59,13 +33,6 @@ namespace WindowsFormCars
             PictureHeight = pictureHeight;
             _currentIndex = -1;
         }
-        /// <summary>
-        /// Перегрузка оператора сложения
-        /// Логика действия: на парковку добавляется автомобиль
-        /// </summary>
-        /// <param name="p">Парковка</param>
-        /// <param name="car">Добавляемый автомобиль</param>
-        /// <returns></returns>
         public static int operator +(Parking<T> p, T boat)
         {
             if (p._places.Count == p._maxCount)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormCars
 {
-    public class Conteynerovoz : Boat
+    public class Conteynerovoz : Boat, IComparable<Conteynerovoz>, IEquatable<Conteynerovoz>
     {
         public Color DopColor { private set; get; }
         public bool Cran { private set; get; }
@@ -79,6 +79,79 @@ namespace WindowsFormCars
         public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name + ";" + Flag + ";" + Anchor + ";" + Cran;
+        }
+        public int CompareTo(Conteynerovoz other)
+        {
+            var res = (this is Boat).CompareTo(other is Boat);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            if (Anchor != other.Anchor)
+            {
+                return Anchor.CompareTo(other.Anchor);
+            }
+            if (Cran != other.Cran)
+            {
+                return Cran.CompareTo(other.Cran);
+            }
+            if (Flag != other.Flag)
+            {
+                return Flag.CompareTo(other.Flag);
+            }
+            return 0;
+        }
+        public bool Equals(Conteynerovoz other)
+        {
+            var res = (this as Boat).Equals(other as Boat);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            if (Anchor != other.Anchor)
+            {
+                return false;
+            }
+            if (Cran != other.Cran)
+            {
+                return false;
+            }
+            if (Flag != other.Flag)
+            {
+                return false;
+            }
+            return true;
+        }
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Conteynerovoz carObj))
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
