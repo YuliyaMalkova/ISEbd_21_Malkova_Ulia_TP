@@ -92,7 +92,7 @@ namespace WindowsFormCars
                 if (CheckFreePlace(ind))
                 {
                     _places.Add(ind, value);
-                    _places[ind].SetPosition(5 + ind / 5 * _placeSizeWidth + 20, ind % 5 * _placeSizeHeight + 29, PictureWidth, PictureHeight);
+                    _places[ind].SetPosition(5 + ind / 3 * _placeSizeWidth + 20, ind % 3 * _placeSizeHeight + 29, PictureWidth, PictureHeight);
                 }
             }
         }
