@@ -57,9 +57,6 @@
     <Compile Include="FormConteynerovoz.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCarConfig.Designer.cs">
-      <DependentUpon>FormCarConfig.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormParking.cs">
       <SubType>Form</SubType>
     </Compile>
