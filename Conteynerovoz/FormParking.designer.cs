@@ -40,8 +40,8 @@
             this.фыйлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.загрузитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileParking = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileParking = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBoxTakeBoat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxtakeboat)).BeginInit();
@@ -202,7 +202,7 @@
         private System.Windows.Forms.ToolStripMenuItem фыйлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem загрузитьToolStripMenuItem;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileParking;
+        private System.Windows.Forms.SaveFileDialog saveFileParking;
     }
 }
