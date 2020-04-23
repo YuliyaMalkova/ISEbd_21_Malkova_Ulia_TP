@@ -33,6 +33,7 @@
             this.labelBoat = new System.Windows.Forms.Label();
             this.pictureBoxBoat = new System.Windows.Forms.PictureBox();
             this.panelBoat = new System.Windows.Forms.Panel();
+            this.panelCar = new System.Windows.Forms.Panel();
             this.labelDopColor = new System.Windows.Forms.Label();
             this.labelBaseColor = new System.Windows.Forms.Label();
             this.panelRed = new System.Windows.Forms.Panel();
